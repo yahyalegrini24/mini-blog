@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { Plus, Search } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Skeleton } from './components/skeleton';
 
 export default function HomePage() {
   const [posts, setPosts] = useState([]);
@@ -170,7 +169,7 @@ export default function HomePage() {
               <motion.div 
                 key={post.id} 
                 variants={item}
-                layout
+                layoutas
                 initial="hidden"
                 animate="show"
                 exit={{ opacity: 0, scale: 0.9 }}
