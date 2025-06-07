@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Post {
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   String?
+  image     String?  // URL of the uploaded image from Cloudinary
+  imagePublicId String? // Cloudinary public ID for image management
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
