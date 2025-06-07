@@ -16,7 +16,7 @@ export default function HomePage() {
   useEffect(() => {
     async function getPosts() {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/posts`);
+        const res = await fetch(`/api/posts`);
         const data = await res.json();
         setPosts(data);
       } catch (error) {
